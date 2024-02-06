@@ -54,24 +54,46 @@
     height: 50px; /* Adjust height as needed */
   }
 
-  /* Navigation styles */
+ /* Navigation styles */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Align navigation items to the right */
+}
+
+nav ul li {
+  margin-right: 10px; /* Adjust spacing between navigation items */
+}
+
+nav ul li:last-child {
+  margin-right: 0; /* Remove margin from last navigation item */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-family: 'Poppins', sans-serif; 
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the start of the column */
+  }
+
   nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    justify-content: flex-start; /* Align navigation items to the start */
+    margin-top: 10px; /* Add spacing between logo and navigation on smaller screens */
   }
-  
+
   nav ul li {
-    margin-right: 20px;
+    margin-right: 0; /* Remove right margin for navigation items */
+    margin-bottom: 5px; /* Add spacing between navigation items */
   }
-
-  nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-family: 'Poppins', sans-serif; 
-  }
-
+}
   /* Advertisement container */
   .advertisement-container {
     background-color: #fff;
