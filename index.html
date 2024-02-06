@@ -1,1 +1,674 @@
-S
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Website</title>
+<style>
+  /* Importing the Poppins font */
+  @font-face {
+    font-family: 'Poppins';
+    src: url('poppins/Poppins-Regular.ttf') format('truetype');
+    /* You might need to adjust the path and format depending on your font file */
+  }
+
+  /* Global styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #3498db; /* Blue background */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Text color */
+    font-size:1.25em;
+    line-height;1.7rem;
+  }
+  footer {
+    background-color: #f2f2f2;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-top:10px;
+  }
+  
+  h2 {
+  text-align: center;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif; /* Applying the Poppins font */
+  }
+  
+  /* Logo styles */
+  .logo img {
+    height: 50px; /* Adjust height as needed */
+  }
+
+  /* Navigation styles */
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Poppins', sans-serif; 
+  }
+
+  /* Advertisement container */
+  .advertisement-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #333;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  /* Content container */
+  .language-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    align-items: center;
+    border: 2px solid #333;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  
+  .how {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    align-items: center;
+    border: 2px solid #333;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .content-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    align-items: center;
+    border: 2px solid #333;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .tool-container {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    align-items: center;
+    border: 2px solid #333;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      .main-body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #333;
+        text-align: center;
+      }
+
+      .tool-p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+        color: #666;
+        line-height: 1.5;
+        text-align: justify;
+      }
+
+      textarea {
+        width: 100%;
+        color: #666;
+        resize: none;
+        padding: 0.75rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      label {
+        display: block;
+        color: #222;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 0.25rem;
+      }
+
+      #voice-select {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        color: #666;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 1.5rem;
+      }
+
+      .button-container {
+        display: block;
+        justify-content: center;
+        padding: 16px;
+        border: 1px solid rgb(107, 106, 106, 0.5);
+        border-radius: 7px;
+        margin-top: 20px;
+        margin-left: -1.4rem;
+      }
+
+      .speak-download-container {
+        box-sizing: content-box;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 7px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      button {
+        font-size: 1rem;
+        padding: 0.75rem 1.25rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #4A8ED6;
+        color: #ffffff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-right: 1rem;
+      }
+
+      button:hover {
+        background-color: #296FB8;
+      }
+
+      button:last-child {
+        margin-right: 0;
+      }
+
+      .rectangle-bounce-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        border: 1px solid gray;
+        border-radius: 6px;
+        padding: 10px;
+        background-color: #4A8ED6;
+      }
+
+      .rectangle-bounce-loader .rectangle {
+        width: 2.1px;
+        height: 20px;
+        margin: 0 2px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        animation: rectangle-bounce-animation 0.9s infinite ease-in-out;
+      }
+
+      .rectangle-bounce-loader .rectangle:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+
+      .rectangle-bounce-loader .rectangle:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+
+      .rectangle-bounce-loader .rectangle:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .rectangle-bounce-loader .rectangle:nth-child(5) {
+        animation-delay: 0.2s;
+      }  
+
+      .rectangle-bounce-loader .rectangle:nth-child(6) {
+        animation-delay: 0.1s;
+      }
+
+      @keyframes rectangle-bounce-animation {
+        0%,
+        100% {
+          transform: scaleY(0.2);
+        }
+        50% {
+          transform: scaleY(1.2);
+        }
+      }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="Sound-of-text-logo.webp" alt="Your Logo">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="https://soundoftext.site">Home</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#how-to-use">How to Use</a></li>
+    </ul>
+  </nav>
+  <title>Sound of Text - Text to Speech (TTS) Downloader</title>
+</header>
+
+<div class="advertisement-container">
+  <p>Advertisement</p>
+</div>
+ <div class="tool-container">
+ <h1>Sound of Text - Text to Speech Downloader Website</h1>
+  <p>Please enter the text, select voice and click on Generate Button!</p>
+      <div class="container">
+        <br>
+        <label for="input-text">Text:</label>
+        <textarea
+          id="input-text"
+          rows="5"
+          placeholder="Type your text here"
+        ></textarea>
+        <label for="voice-select">Voice:</label>
+        <select id="voice-select">
+          <!-- Voice options will be populated by JavaScript -->
+        </select>
+
+        <button id="generate-btn">Generate</button>
+        <div id="bounce-loader" style="display: none">
+          <div class="rectangle-bounce-loader">
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div class="rectangle"></div>
+            <div style="margin-left: 11px; height: 24px">
+              <p class="tool-p" style="font-size: 15px; color: #f4f4f4">
+                Generating sound
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="converted-btns" style="display: none">
+          <div class="button-container">
+            <audio id="audio-player" controls></audio>
+            <div class="speak-download-container">
+              <button id="speak-btn">Speak</button>
+              <button id="download-btn">Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        let audioUrl = undefined;
+        let audio = undefined;
+        const inputText = document.getElementById("input-text");
+        const speakBtn = document.getElementById("speak-btn");
+        const downloadBtn = document.getElementById("download-btn");
+        const generateBtn = document.getElementById("generate-btn");
+
+        const voiceSelect = document.getElementById("voice-select");
+
+        const apiKey = "AIzaSyC1uWs7O2QpQ56N9wUGEDMhfQPl0z28Fsk"; // Replace with your Google Cloud Text-to-Speech API key
+
+        populateVoiceOptions();
+
+        speakBtn.addEventListener("click", () => {
+          playAudio(audioUrl);
+
+          // if (audio) {
+          //   audio.play();
+
+          // } else {
+          //   alert('Audio is not ready')
+          // }
+        });
+
+        downloadBtn.addEventListener("click", () => {
+          downloadAudio(audioUrl);
+        });
+
+        generateBtn.addEventListener("click", async () => {
+          const text = inputText.value;
+          const voice = voiceSelect.value;
+
+          if (text.trim() === "") {
+            alert("Please enter some text");
+            return;
+          }
+
+          audioUrl = await fetchSpeech(text, voice, "DOWNLOAD");
+        });
+
+        function showLoader() {
+          document.getElementById("bounce-loader").style.display =
+            "inline-flex";
+          document.getElementById("generate-btn").style.display = "none";
+          document.getElementById("converted-btns").style.display = "none";
+        }
+
+        function hideLoader() {
+          document.getElementById("bounce-loader").style.display = "none";
+          document.getElementById("generate-btn").style.display = "flex";
+        }
+
+        function showButton() {
+          document.getElementById("converted-btns").style.display = "flex";
+        }
+
+        async function fetchSpeech(text, voice, action) {
+          try {
+            const body = {
+              text: text,
+              lang: voice,
+            };
+
+            if (text.length > 200)
+              return alert(
+                `Expected text length is 200 or less, found ${text.length}`
+              );
+
+            showLoader();
+
+            const blobRes = await fetch(
+              `https://google-tts.vercel.app/getAudio`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(body),
+              }
+            );
+            // const data = await response.json();
+
+            // const urlRes = await fetch(`${apiUrl}/${data.id}`);
+            // const urlData = await urlRes.json();
+            // const audioUrl = urlData.location;
+
+            // const blobRes = await fetch(
+            //   `https://google-tts.vercel.app/?url=${audioUrl}`
+            // );
+            const blob = await blobRes.blob();
+            const url = URL.createObjectURL(blob);
+            let audioPlayer = document.getElementById("audio-player");
+            audioPlayer.src = url;
+            await audioPlayer.load();
+            hideLoader();
+            showButton();
+            return url;
+          } catch (err) {
+            hideLoader();
+            alert(err);
+          }
+          // if (action === "PLAY") {
+          //   playAudio(audioUrl);
+          // } else if (action === "DOWNLOAD") {
+          //   downloadAudio(audioUrl);
+          // }
+        }
+
+        function base64ToBlob(base64, mimeType = "") {
+          const byteString = atob(base64);
+          const byteNumbers = new Uint8Array(byteString.length);
+
+          for (let i = 0; i < byteString.length; i++) {
+            byteNumbers[i] = byteString.charCodeAt(i);
+          }
+
+          return new Blob([byteNumbers], { type: mimeType });
+        }
+
+        function playAudio(audioUrl) {
+          const audio = new Audio(audioUrl);
+          audio.play();
+        }
+
+        function downloadAudio(audioUrl) {
+          const downloadLink = document.createElement("a");
+          downloadLink.href = audioUrl;
+          downloadLink.download = "speech.mp3";
+          downloadLink.style.display = "none";
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+        }
+
+        //   async function pollUrl(url) {
+        //     let status = 'pending';
+
+        //     while (status == 'pending') {
+        //         const res = await fetch(url)
+        //         const data = await res.json();
+        //         status = data.status;
+        //         await new Promise((resolve) => setTimeout(() => {
+        //             resolve()
+        //         }, 500));
+        //     }
+
+        //   }
+
+        async function populateVoiceOptions() {
+          try {
+            const availableVoices = [
+              { key: "id-ID", value: "Indonesian" },
+              { key: "hi-IN", value: "Hindi" },
+              { key: "bn-BD", value: "Bengali (Bangladesh)" },
+              { key: "bn-IN", value: "Bengali (India)" },
+              { key: "af-ZA", value: "Afrikaans" },
+              { key: "sq", value: "Albanian" },
+              { key: "ar-AE", value: "Arabic" },
+              { key: "hy", value: "Armenian" },
+
+              { key: "bs", value: "Bosnian" },
+              { key: "my", value: "Burmese (Myanmar)" },
+              { key: "ca-ES", value: "Catalan" },
+              { key: "cmn-Hant-TW", value: "Chinese" },
+              { key: "hr-HR", value: "Croatian" },
+              { key: "cs-CZ", value: "Czech" },
+              { key: "da-DK", value: "Danish" },
+              { key: "nl-NL", value: "Dutch" },
+              { key: "en-AU", value: "English (Australia)" },
+              { key: "en-GB", value: "English (United Kingdom)" },
+              { key: "en-US", value: "English (United States)" },
+              { key: "eo", value: "Esperanto" },
+              { key: "et", value: "Estonian" },
+              { key: "fil-PH", value: "Filipino" },
+              { key: "fi-FI", value: "Finnish" },
+              { key: "fr-FR", value: "French" },
+              { key: "fr-CA", value: "French (Canada)" },
+              { key: "de-DE", value: "German" },
+              { key: "el-GR", value: "Greek" },
+              { key: "gu", value: "Gujarati" },
+
+              { key: "hu-HU", value: "Hungarian" },
+              { key: "is-IS", value: "Icelandic" },
+
+              { key: "it-IT", value: "Italian" },
+              { key: "ja-JP", value: "Japanese (Japan)" },
+              { key: "kn", value: "Kannada" },
+              { key: "km", value: "Khmer" },
+              { key: "ko-KR", value: "Korean" },
+              { key: "la", value: "Latin" },
+              { key: "lv", value: "Latvian" },
+              { key: "mk", value: "Macedonian" },
+              { key: "ml", value: "Malayalam" },
+              { key: "mr", value: "Marathi" },
+              { key: "ne", value: "Nepali" },
+              { key: "nb-NO", value: "Norwegian" },
+              { key: "pl-PL", value: "Polish" },
+              { key: "pt-BR", value: "Portuguese" },
+              { key: "ro-RO", value: "Romanian" },
+              { key: "ru-RU", value: "Russian" },
+              { key: "sr-RS", value: "Serbian" },
+              { key: "si", value: "Sinhala" },
+              { key: "sk-SK", value: "Slovak" },
+              { key: "es-MX", value: "Spanish (Mexico)" },
+              { key: "es-ES", value: "Spanish (Spain)" },
+              { key: "sw", value: "Swahili" },
+              { key: "sv-SE", value: "Swedish" },
+              { key: "ta", value: "Tamil" },
+              { key: "te", value: "Telugu" },
+              { key: "th-TH", value: "Thai" },
+              { key: "tr-TR", value: "Turkish" },
+              { key: "uk-UA", value: "Ukrainian" },
+              { key: "ur", value: "Urdu" },
+              { key: "vi-VN", value: "Vietnamese" },
+              { key: "cy", value: "Welsh" },
+            ];
+            let indonesianVoiceFound = false;
+
+            availableVoices.forEach((voice) => {
+              const option = document.createElement("option");
+              option.value = voice.key;
+              option.textContent = voice.value;
+              voiceSelect.appendChild(option);
+            });
+          } catch (error) {
+            console.error("Error fetching voices:", error);
+            alert(
+              "An error occurred while fetching voices. Please check the console for more details."
+            );
+          }
+        }
+      </script>
+    </div>
+
+
+
+
+<div class="language-container" id="languages">
+<p>Welcome to our website <a href="https://soundoftext.site/">Sound of Text</a>. If you are looking for the website to generate voiceover from the text. You are at the right place. We have most commonly used languages and the voices of male and female that look natural. Let's go through the features and functions of our website for your easy use.</p>
+<br>
+  <h2>Languages we Support</h2>
+  <br>
+  <p>With the help of our tool you can generate the voices of male and female in following Languages. We have added most commonly used languages. If you want us to add some more languages. Please do let us know.</p>
+  <br>
+  <ul>
+  <li>Indonesian</li>
+  <li>Hindi Male and Female Voice</li>
+  <li>Bengali (Bangladesh)</li>
+  <li>Bengali (India)</li>
+  <li>Afrikaans</li>
+  <li>Albanian</li>
+  <li>Arabic</li>
+  <li>Armenian</li>
+  <li>Bosnian</li>
+  <li>Burmese (Myanmar)</li>
+  <li>Catalan</li>
+  <li>Chinese</li>
+  <li>Croatian</li>
+  <li>Czech</li>
+  <li>Danish</li>
+  <li>Dutch</li>
+  <li>English (Australia)</li>
+  <li>English (United Kingdom)</li>
+  <li>English (United States)</li>
+  <li>Esperanto</li>
+  <li>Estonian</li>
+  <li>Filipino</li>
+  <li>Finnish</li>
+  <li>French</li>
+  <li>French (Canada)</li>
+  <li>German</li>
+  <li>Greek</li>
+  <li>Gujarati</li>
+  <li>Hungarian</li>
+  <li>Icelandic</li>
+  <li>Italian</li>
+  <li>Japanese (Japan)</li>
+  <li>Kannada</li>
+  <li>Khmer</li>
+  <li>Korean</li>
+  <li>Latin</li>
+  <li>Latvian</li>
+  <li>Macedonian</li>
+  <li>Malayalam</li>
+  <li>Marathi</li>
+  <li>Nepali</li>
+  <li>Norwegian</li>
+  <li>Polish</li>
+  <li>Portuguese</li>
+  <li>Romanian</li>
+  <li>Russian</li>
+  <li>Serbian</li>
+  <li>Sinhala</li>
+  <li>Slovak</li>
+  <li>Spanish (Mexico)</li>
+  <li>Spanish (Spain)</li>
+  <li>Swahili</li>
+  <li>Swedish</li>
+  <li>Tamil</li>
+  <li>Telugu</li>
+  <li>Thai</li>
+  <li>Turkish</li>
+  <li>Ukrainian</li>
+  <li>Urdu</li>
+  <li>Vietnamese</li>
+  <li>Welsh</li>
+</ul>
+</div>
+<div class="how" id="how-to-use">
+  <h2>How to Use?</h2>
+  <br>
+  <p>Using our sound of text tool to generate the voices in different languages with the voice of male and female is very easy. You can follow the simple steps.
+  <br>
+  <li>Enter your text or Paste a maximum of 200 words into the input container.</li>
+  <li>Select the Language or Voice.</li>
+  <li>Click on the Generate button, the tool will start generating the voice for you</li>
+  <li>As soon the voice is generated a voice player will show up. You can play the sound to check if it is according to your needs or not.</li>
+  <li>You can download the voice by clicking on the download button</li>
+  
+  </div>
+<footer>
+  <p>Copyright © 2024 - <a href="https://soundoftext.site/">Sound of Text</a> Made with ❤️</p>
+</footer>
+</body>
+</html>
