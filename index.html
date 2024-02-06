@@ -106,6 +106,33 @@ nav ul li a {
   display: block;
   padding: 5px 0;
 }
+
+/* Media query for mobile devices */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show hamburger icon on mobile */
+  }
+
+  nav ul {
+    display: none; /* Hide navigation items by default on mobile */
+    flex-direction: column; /* Stack navigation items vertically */
+    background-color: #333; /* Background color for the dropdown menu */
+    padding: 10px;
+    position: fixed;
+    top: 60px; /* Adjust as needed to avoid overlapping with header */
+    left: 0;
+    right: 0;
+  }
+
+  nav ul.show {
+    display: flex; /* Show navigation items when toggled */
+  }
+
+  nav ul li {
+    margin: 10px 0; /* Add spacing between navigation items */
+  }
+}
+
   /* Advertisement container */
   .advertisement-container {
     background-color: #fff;
