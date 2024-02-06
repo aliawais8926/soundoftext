@@ -54,21 +54,33 @@
     height: 50px; /* Adjust height as needed */
   }
 
- /* Navigation styles */
+/* Hamburger menu styles */
+.menu-toggle {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  align-items: center;
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: flex-end; /* Align navigation items to the right */
 }
 
 nav ul li {
-  margin-right: 10px; /* Adjust spacing between navigation items */
+  margin-right: 20px;
 }
 
 nav ul li:last-child {
-  margin-right: 0; /* Remove margin from last navigation item */
+  margin-right: 0;
 }
 
 nav ul li a {
@@ -77,22 +89,22 @@ nav ul li a {
   font-family: 'Poppins', sans-serif; 
 }
 
-/* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-  header {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: flex-start; /* Align items to the start of the column */
-  }
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none; /* Hide by default */
+  position: absolute;
+  background-color: #333;
+  padding: 10px;
+  z-index: 1;
+}
 
-  nav ul {
-    justify-content: flex-start; /* Align navigation items to the start */
-    margin-top: 10px; /* Add spacing between logo and navigation on smaller screens */
-  }
+.dropdown-menu.show {
+  display: block; /* Show when toggled */
+}
 
-  nav ul li {
-    margin-right: 0; /* Remove right margin for navigation items */
-    margin-bottom: 5px; /* Add spacing between navigation items */
-  }
+.dropdown-menu a {
+  display: block;
+  padding: 5px 0;
 }
   /* Advertisement container */
   .advertisement-container {
@@ -315,7 +327,8 @@ nav ul li a {
   <div class="logo">
     <img src="Sound-of-text-logo.webp" alt="Your Logo">
   </div>
-  <nav>
+ <nav>
+    <div class="menu-toggle">&#9776;</div> <!-- Hamburger icon for mobile -->
     <ul>
       <li><a href="https://soundoftext.site">Home</a></li>
       <li><a href="#languages">Languages</a></li>
@@ -323,7 +336,16 @@ nav ul li a {
     </ul>
   </nav>
 </header>
+<script>
+ document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
 
+  menuToggle.addEventListener('click', function() {
+    dropdownMenu.classList.toggle('show');
+  });
+});
+</script>
 <div class="advertisement-container">
   <p>Advertisement</p>
 </div>
