@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound of Text Gratis - Pengunduh Teks ke Suara (TTS)</title>
+    <meta name="description" content="Sound of Text adalah alat gratis yang memungkinkan Anda untuk menghasilkan dan mengunduh suara nyata pria dan wanita dari teks dalam berbagai bahasa.">
+    <meta name="keywords" content="teks ke suara, TTS, sound of text, pengunduh teks ke suara, generator suara, generator voiceover">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://soundoftext.site/id/">
+    <meta name="robots" content="index, follow">
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Sound of Text Gratis - Pengunduh Teks ke Suara (TTS)">
+    <meta property="og:description" content="Sound of Text adalah alat gratis yang memungkinkan Anda untuk menghasilkan dan mengunduh suara nyata pria dan wanita dari teks dalam berbagai bahasa.">
+    <meta property="og:image" content="https://soundoftext.site/featured-image.webp">
+    <meta property="og:url" content="https://soundoftext.site/id/">
+    <meta property="og:type" content="website">
+    <style>
+        /* Importing the Poppins font */
+        @font-face {
+            font-family: 'Poppins';
+            src: url('Poppins-Regular.ttf') format('truetype');
+            /* You might need to adjust the path and format depending on your font file */
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #3498db; /* Blue background */
+            margin: 0;
+            padding: 0;
+            color: #333; /* Text color */
+            font-size:1.25em;
+            line-height;1.7rem;
+        }
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-top:10px;
+        }
+        
+        h2 {
+            text-align: center;
+        }
+        
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Poppins', sans-serif; /* Applying the Poppins font */
+        }
+        
+        /* Logo styles */
+        .logo img {
+            height: 50px; /* Default logo size */
+        }
+
+        /* Media query for smaller screen sizes */
+        @media screen and (max-width: 700px) {
+            .logo img {
+                height: 30px; /* Adjust logo size for smaller screens */
+            }
+        }
+
+        /* Hamburger menu styles */
+        .menu-toggle {
+            display: none; /* Hide by default */
+            cursor: pointer;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        /* Navigation styles */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        /* Dropdown menu styles */
+        .dropdown-menu {
+            display: none; /* Hide by default */
+            position: absolute;
+            background-color: #333;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        .dropdown-menu.show {
+            display: block; /* Show when toggled */
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 5px 0;
+        }
+
+        .menu-toggle {
+            display: none; /* Hide by default */
+            cursor: pointer;
+        }
+
+        /* Media query for mobile devices */
+        @media screen and (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Show hamburger icon on mobile */
+            }
+
+            nav ul {
+                display: none; /* Hide navigation items by default on mobile */
+                flex-direction: column; /* Stack navigation items vertically */
+                background-color: #333; /* Background color for the dropdown menu */
+                padding: 10px;
+                position: fixed;
+                top: 60px; /* Adjust as needed to avoid overlapping with header */
+                left: 0;
+                right: 0;
+            }
+
+            nav ul.show {
+                display: flex; /* Show navigation items when toggled */
+            }
+
+            nav ul li {
+                margin: 10px 0; /* Add spacing between navigation items */
+            }
+        }
+
+        /* Advertisement container */
+        .advertisement-container {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            border: 2px solid #333;
+            text-align: center;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        /* Content container */
+        .language-container {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            align-items: center;
+            border: 2px solid #333;
+            text-align: left;
+            margin-top: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .how {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            align-items: center;
+            border: 2px solid #333;
+            text-align: left;
+            margin-top: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        .content-container {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            align-items: center;
+            border: 2px solid #333;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        .tool-container {
+            background-color: #fff;
+            padding: 20px;
+            margin-top: 20px;
+            align-items: center;
+            border: 2px solid #333;
+            text-align: center;
+            margin-top: 20px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .tool-p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        textarea {
+            width: 100%;
+            color: #666;
+            resize: none;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        label {
+            display:block;
+            color: #222;
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+
+        #voice-select {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            color: #666;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 1.5rem;
+        }
+
+        .button-container {
+            display: block;
+            justify-content: center;
+            padding: 16px;
+            border: 1px solid rgb(107, 106, 106, 0.5);
+            border-radius: 7px;
+            margin-top: 20px;
+            margin-left: -1.4rem;
+        }
+
+        .speak-download-container {
+            box-sizing: content-box;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 7px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        button {
+            font-size: 1rem;
+            padding: 0.75rem 1.25rem;
+            border: none;
+            border-radius: 5px;
+            background-color: #4A8ED6;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-right: 1rem;
+        }
+
+        button:hover {
+            background-color: #296FB8;
+        }
+
+        button:last-child {
+            margin-right: 0;
+        }
+
+        .rectangle-bounce-loader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            border: 1px solid gray;
+            border-radius: 6px;
+            padding: 10px;
+            background-color: #4A8ED6;
+        }
+
+        .rectangle-bounce-loader .rectangle {
+            width: 2.1px;
+            height: 20px;
+            margin: 0 2px;
+            border-radius: 3px;
+            background-color: #ffffff;
+            animation: rectangle-bounce-animation 0.9s infinite ease-in-out;
+        }
+
+        .rectangle-bounce-loader .rectangle:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .rectangle-bounce-loader .rectangle:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .rectangle-bounce-loader .rectangle:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+        .rectangle-bounce-loader .rectangle:nth-child(5) {
+            animation-delay: 0.2s;
+        }  
+
+        .rectangle-bounce-loader .rectangle:nth-child(6) {
+            animation-delay: 0.1s;
+        }
+
+        @keyframes rectangle-bounce-animation {
+            0%,
+            100% {
+                transform: scaleY(0.2);
+            }
+            50% {
+                transform: scaleY(1.2);
+            }
+        }
+    </style>
+    <meta property="og:image" content="featured-image.webp">
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="Sound-of-text-logo.webp" alt="Logo Anda">
+    </div>
+    <nav>
+        <div class="menu-toggle">&#9776;</div> <!-- Hamburger icon for mobile -->
+        <ul>
+            <li><a href="https://soundoftext.site">Beranda</a></li>
+            <li><a href="#languages">Bahasa</a></li>
+            <li><a href="#how-to-use">Cara Menggunakan</a></li>
+        </ul>
+    </nav>
+</header>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    menuToggle.addEventListener('click', function() {
+        dropdownMenu.classList.toggle('show');
+    });
+});
+</script>
+<div class="advertisement-container">
+    <p>Iklan</p>
+</div>
+<div class="tool-container">
+    <h1>Sound of Text - Situs Pengunduh Teks ke Suara</h1>
+    <p>Silakan masukkan teks, pilih suara dan klik tombol Hasilkan!</p>
+    <div class="container">
+        <br>
+        <label for="input-text">Teks:</label>
+        <textarea id="input-text" rows="5" placeholder="Ketik teks Anda di sini"></textarea>
+        <label for="voice-select">Suara:</label>
+        <select id="voice-select">
+            <!-- Voice options will be populated by JavaScript -->
+        </select>
+        <button id="generate-btn">Hasilkan</button>
+        <div id="bounce-loader" style="display: none">
+            <div class="rectangle-bounce-loader">
+                <div class="rectangle"></div>
+                <div class="rectangle"></div>
+                <div class="rectangle"></div>
+                <div class="rectangle"></div>
+                <div class="rectangle"></div>
+                <div class="rectangle"></div>
+                <div style="margin-left: 11px; height: 24px">
+                    <p class="tool-p" style="font-size: 15px; color: #f4f4f4">
+                        Menghasilkan suara
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="converted-btns" style="display: none">
+            <div class="button-container">
+                <audio id="audio-player" controls></audio>
+                <div class="speak-download-container">
+                    <button id="speak-btn">Dengar</button>
+                    <button id="download-btn">Unduh</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="language-container" id="languages">
+    <h2>Apa itu Sound of Text?</h2>
+    <br>
+    <p>Sound of Text adalah alat serbaguna yang memungkinkan pengguna untuk menghasilkan dan mengunduh file audio teks ke suara (TTS). Dengan alat ini, pengguna dapat dengan mudah mengonversi teks tertulis menjadi kata-kata yang diucapkan dalam berbagai bahasa dan mengunduh file audio untuk penggunaan pribadi atau profesional. Baik Anda memerlukan TTS untuk tujuan pendidikan, pembelajaran bahasa, atau aksesibilitas, Sound of Text menyediakan solusi yang nyaman dan efisien.</p>
+    <br>
+    <p>Selamat datang di situs web kami <a href="https://soundoftext.site/">Sound of Text</a>. Jika Anda mencari situs web untuk menghasilkan <a href="https://en.wikipedia.org/wiki/Voice-over">voiceover</a> dari teks. Anda berada di tempat yang tepat. Kami memiliki bahasa yang paling umum digunakan dan suara pria dan wanita yang terlihat alami. Mari kita lihat fitur dan fungsi situs web kami untuk kemudahan Anda.</p>
+    <br>
+    <h2>Bahasa yang Kami Dukung</h2>
+    <br>
+    <p>Dengan bantuan alat kami, Anda dapat menghasilkan suara pria dan wanita dalam Bahasa berikut. Kami telah menambahkan bahasa yang paling umum digunakan. Jika Anda ingin kami menambahkan beberapa bahasa lagi. Silakan beri tahu kami.</p>
+    <br>
+    <ul>
+        <li>Indonesia</li>
+        <li>Suara Pria dan Wanita Hindi</li>
+        <li>Bengali (Bangladesh)</li>
+        <li>Bengali (India)</li>
+        <li>Afrikaans</li>
+        <li>Albania</li>
+        <li>Arab</li>
+        <li>Armenia</li>
+        <li>Bosnia</li>
+        <li>Burma (Myanmar)</li>
+        <li>Katalan</li>
+        <li>Cina</li>
+        <li>Kroasia</li>
+        <li>Ceko</li>
+        <li>Denmark</li>
+        <li>Belanda</li>
+        <li>Inggris (Australia)</li>
+        <li>Inggris (Inggris)</li>
+        <li>Inggris (Amerika Serikat)</li>
+        <li>Esperanto</li>
+        <li>Estonia</li>
+        <li>Filipina</li>
+        <li>Finlandia</li>
+        <li>Perancis</li>
+        <li>Perancis (Kanada)</li>
+        <li>Jerman</li>
+        <li>Yunani</li>
+        <li>Gujarati</li>
+        <li>Hongaria</li>
+        <li>Islandia</li>
+        <li>Italia</li>
+        <li>Jepang (Jepang)</li>
+        <li>Kannada</li>
+        <li>Khmer</li>
+        <li>Korea</li>
+        <li>Latin</li>
+        <li>Latvia</li>
+        <li>Makedonia</li>
+        <li>Malayalam</li>
+        <li>Marathi</li>
+        <li>Nepal</li>
+        <li>Norwegia</li>
+        <li>Polandia</li>
+        <li>Portugis</li>
+        <li>Rumania</li>
+        <li>Rusia</li>
+        <li>Serbia</li>
+        <li>Sinhala</li>
+        <li>Slovakia</li>
+        <li>Spanyol (Meksiko)</li>
+        <li>Spanyol (Spanyol)</li>
+        <li>Swahili</li>
+        <li>Swedia</li>
+        <li>Tamil</li>
+        <li>Telugu</li>
+        <li>Thailand</li>
+        <li>Turki</li>
+        <li>Ukraina</li>
+        <li>Urdu</li>
+        <li>Vietnam</li>
+        <li>Wales</li>
+    </ul>
+</div>
+<div class="how" id="how-to-use">
+    <h2>Bagaimana Cara Menggunakannya?</h2>
+    <br>
+    <p>Menggunakan alat sound of text kami untuk menghasilkan suara dalam berbagai bahasa dengan suara pria dan wanita sangat mudah. Anda dapat mengikuti langkah-langkah sederhana.
+    <br>
+    <ul>
+        <li>Masukkan teks Anda atau Tempelkan maksimal 200 kata ke dalam wadah input.</li>
+        <li>Pilih Bahasa atau Suara.</li>
+        <li>Klik tombol Hasilkan, alat akan mulai menghasilkan suara untuk Anda</li>
+        <li>Segera setelah suara dihasilkan, pemutar suara akan muncul. Anda dapat memutar suara untuk memeriksa apakah sudah sesuai dengan kebutuhan Anda atau tidak.</li>
+        <li>Anda dapat mengunduh suara dengan mengklik tombol unduh</li>
+    </ul>
+</div>
+<footer>
+    <p>Hak Cipta © 2024 - <a href="https://soundoftext.site/">Sound of Text</a> Dibuat dengan ❤️</p>
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "Sound of Text Gratis - Pengunduh Teks ke Suara (TTS)",
+        "description": "Sound of Text adalah alat gratis yang memungkinkan Anda untuk menghasilkan dan mengunduh suara nyata pria dan wanita dari teks dalam berbagai bahasa.",
+        "url": "https://soundoftext.site/"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Sound of Text- Pengunduh Teks ke Suara (TTS)",
+        "description": "Sound of Text adalah alat gratis yang memungkinkan Anda untuk menghasilkan dan mengunduh suara nyata pria dan wanita dari teks dalam berbagai bahasa.",
+        "url": "https://soundoftext.site/",
+        "applicationCategory": "Teks ke Suara",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "http://schema.org/InStock"
+        }
+    }
+    </script>
+</footer>
+</body>
+</html>
