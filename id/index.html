@@ -152,7 +152,43 @@
                 margin: 10px 0; /* Add spacing between navigation items */
             }
         }
+/* FAQ Section Styles */
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
 
+section h2 {
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+section h3 {
+    color: #34495e;
+    font-size: 1.2em;
+}
+
+div[itemprop="acceptedAnswer"] {
+    margin-top: 5px;
+    padding-left: 20px;
+    border-left: 3px solid #3498db;
+}
+
+div[itemprop="text"] {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-top: 5px;
+    color: #333;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
         /* Advertisement container */
         .advertisement-container {
             background-color: #fff;
@@ -753,6 +789,43 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }
       </script>
+    <section>
+  <h2>FAQs about Sound of Text</h2>
+  <div itemscope itemtype="https://schema.org/FAQPage">
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">Apa itu Sound of Text?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          Sound of Text adalah layanan yang memungkinkan pengguna untuk mengubah teks menjadi suara yang dapat diunduh atau digunakan dalam aplikasi seperti WhatsApp. Ini berguna untuk membuat notifikasi yang disesuaikan, bantuan pembelajaran, dan lainnya.
+        </div>
+      </div>
+    </div>
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">Bagaimana cara menggunakan Sound of Text di WhatsApp?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          Untuk menggunakan Sound of Text di WhatsApp, pertama-tama buat suara di website Sound of Text, unduh file suara tersebut, dan kemudian unggah sebagai pesan suara di WhatsApp atau setel sebagai nada notifikasi.
+        </div>
+      </div>
+    </div>
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">Bagaimana cara membuat Sound of Text?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          Kunjungi website Sound of Text, masukkan teks yang Anda inginkan diubah menjadi suara, pilih jenis suara (pria atau wanita), dan bahasa, kemudian klik 'Generate' untuk membuat dan mengunduh suara tersebut.
+        </div>
+      </div>
+    </div>
+    <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+      <h3 itemprop="name">Mengapa Sound of Text error?</h3>
+      <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        <div itemprop="text">
+          Kesalahan pada Sound of Text bisa terjadi karena berbagai alasan seperti server yang overload, masalah jaringan, atau data teks yang tidak sesuai format. Pastikan koneksi internet Anda stabil dan teks yang dimasukkan tidak terlalu panjang.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <footer>
     <p>Hak Cipta © 2024 - <a href="https://soundoftext.site/">Sound of Text</a> Dibuat dengan ❤️</p>
     <script type="application/ld+json">
