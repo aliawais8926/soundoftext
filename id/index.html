@@ -520,6 +520,239 @@ document.addEventListener('DOMContentLoaded', function() {
         <li>Anda dapat mengunduh suara dengan mengklik tombol unduh</li>
     </ul>
 </div>
+     <script>
+        let audioUrl = undefined;
+        let audio = undefined;
+        const inputText = document.getElementById("input-text");
+        const speakBtn = document.getElementById("speak-btn");
+        const downloadBtn = document.getElementById("download-btn");
+        const generateBtn = document.getElementById("generate-btn");
+
+        const voiceSelect = document.getElementById("voice-select");
+
+        const apiKey = "AIzaSyC1uWs7O2QpQ56N9wUGEDMhfQPl0z28Fsk"; // Replace with your Google Cloud Text-to-Speech API key
+
+        populateVoiceOptions();
+
+        speakBtn.addEventListener("click", () => {
+          playAudio(audioUrl);
+
+          // if (audio) {
+          //   audio.play();
+
+          // } else {
+          //   alert('Audio is not ready')
+          // }
+        });
+
+        downloadBtn.addEventListener("click", () => {
+          downloadAudio(audioUrl);
+        });
+
+        generateBtn.addEventListener("click", async () => {
+          const text = inputText.value;
+          const voice = voiceSelect.value;
+
+          if (text.trim() === "") {
+            alert("Please enter some text");
+            return;
+          }
+
+          audioUrl = await fetchSpeech(text, voice, "DOWNLOAD");
+        });
+
+        function showLoader() {
+          document.getElementById("bounce-loader").style.display =
+            "inline-flex";
+          document.getElementById("generate-btn").style.display = "none";
+          document.getElementById("converted-btns").style.display = "none";
+        }
+
+        function hideLoader() {
+          document.getElementById("bounce-loader").style.display = "none";
+          document.getElementById("generate-btn").style.display = "flex";
+        }
+
+        function showButton() {
+          document.getElementById("converted-btns").style.display = "flex";
+        }
+
+        async function fetchSpeech(text, voice, action) {
+          try {
+            const body = {
+              text: text,
+              lang: voice,
+            };
+
+            if (text.length > 200)
+              return alert(
+                `Expected text length is 200 or less, found ${text.length}`
+              );
+
+            showLoader();
+
+            const blobRes = await fetch(
+              `https://google-tts.vercel.app/getAudio`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(body),
+              }
+            );
+            // const data = await response.json();
+
+            // const urlRes = await fetch(`${apiUrl}/${data.id}`);
+            // const urlData = await urlRes.json();
+            // const audioUrl = urlData.location;
+
+            // const blobRes = await fetch(
+            //   `https://google-tts.vercel.app/?url=${audioUrl}`
+            // );
+            const blob = await blobRes.blob();
+            const url = URL.createObjectURL(blob);
+            let audioPlayer = document.getElementById("audio-player");
+            audioPlayer.src = url;
+            await audioPlayer.load();
+            hideLoader();
+            showButton();
+            return url;
+          } catch (err) {
+            hideLoader();
+            alert(err);
+          }
+          // if (action === "PLAY") {
+          //   playAudio(audioUrl);
+          // } else if (action === "DOWNLOAD") {
+          //   downloadAudio(audioUrl);
+          // }
+        }
+
+        function base64ToBlob(base64, mimeType = "") {
+          const byteString = atob(base64);
+          const byteNumbers = new Uint8Array(byteString.length);
+
+          for (let i = 0; i < byteString.length; i++) {
+            byteNumbers[i] = byteString.charCodeAt(i);
+          }
+
+          return new Blob([byteNumbers], { type: mimeType });
+        }
+
+        function playAudio(audioUrl) {
+          const audio = new Audio(audioUrl);
+          audio.play();
+        }
+
+        function downloadAudio(audioUrl) {
+          const downloadLink = document.createElement("a");
+          downloadLink.href = audioUrl;
+          downloadLink.download = "speech.mp3";
+          downloadLink.style.display = "none";
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
+        }
+
+        //   async function pollUrl(url) {
+        //     let status = 'pending';
+
+        //     while (status == 'pending') {
+        //         const res = await fetch(url)
+        //         const data = await res.json();
+        //         status = data.status;
+        //         await new Promise((resolve) => setTimeout(() => {
+        //             resolve()
+        //         }, 500));
+        //     }
+
+        //   }
+
+        async function populateVoiceOptions() {
+          try {
+            const availableVoices = [
+              { key: "id-ID", value: "Indonesian" },
+              { key: "hi-IN", value: "Hindi" },
+              { key: "bn-BD", value: "Bengali (Bangladesh)" },
+              { key: "bn-IN", value: "Bengali (India)" },
+              { key: "af-ZA", value: "Afrikaans" },
+              { key: "sq", value: "Albanian" },
+              { key: "ar-AE", value: "Arabic" },
+              { key: "hy", value: "Armenian" },
+
+              { key: "bs", value: "Bosnian" },
+              { key: "my", value: "Burmese (Myanmar)" },
+              { key: "ca-ES", value: "Catalan" },
+              { key: "cmn-Hant-TW", value: "Chinese" },
+              { key: "hr-HR", value: "Croatian" },
+              { key: "cs-CZ", value: "Czech" },
+              { key: "da-DK", value: "Danish" },
+              { key: "nl-NL", value: "Dutch" },
+              { key: "en-AU", value: "English (Australia)" },
+              { key: "en-GB", value: "English (United Kingdom)" },
+              { key: "en-US", value: "English (United States)" },
+              { key: "eo", value: "Esperanto" },
+              { key: "et", value: "Estonian" },
+              { key: "fil-PH", value: "Filipino" },
+              { key: "fi-FI", value: "Finnish" },
+              { key: "fr-FR", value: "French" },
+              { key: "fr-CA", value: "French (Canada)" },
+              { key: "de-DE", value: "German" },
+              { key: "el-GR", value: "Greek" },
+              { key: "gu", value: "Gujarati" },
+
+              { key: "hu-HU", value: "Hungarian" },
+              { key: "is-IS", value: "Icelandic" },
+
+              { key: "it-IT", value: "Italian" },
+              { key: "ja-JP", value: "Japanese (Japan)" },
+              { key: "kn", value: "Kannada" },
+              { key: "km", value: "Khmer" },
+              { key: "ko-KR", value: "Korean" },
+              { key: "la", value: "Latin" },
+              { key: "lv", value: "Latvian" },
+              { key: "mk", value: "Macedonian" },
+              { key: "ml", value: "Malayalam" },
+              { key: "mr", value: "Marathi" },
+              { key: "ne", value: "Nepali" },
+              { key: "nb-NO", value: "Norwegian" },
+              { key: "pl-PL", value: "Polish" },
+              { key: "pt-BR", value: "Portuguese" },
+              { key: "ro-RO", value: "Romanian" },
+              { key: "ru-RU", value: "Russian" },
+              { key: "sr-RS", value: "Serbian" },
+              { key: "si", value: "Sinhala" },
+              { key: "sk-SK", value: "Slovak" },
+              { key: "es-MX", value: "Spanish (Mexico)" },
+              { key: "es-ES", value: "Spanish (Spain)" },
+              { key: "sw", value: "Swahili" },
+              { key: "sv-SE", value: "Swedish" },
+              { key: "ta", value: "Tamil" },
+              { key: "te", value: "Telugu" },
+              { key: "th-TH", value: "Thai" },
+              { key: "tr-TR", value: "Turkish" },
+              { key: "uk-UA", value: "Ukrainian" },
+              { key: "ur", value: "Urdu" },
+              { key: "vi-VN", value: "Vietnamese" },
+              { key: "cy", value: "Welsh" },
+            ];
+            let indonesianVoiceFound = false;
+
+            availableVoices.forEach((voice) => {
+              const option = document.createElement("option");
+              option.value = voice.key;
+              option.textContent = voice.value;
+              voiceSelect.appendChild(option);
+            });
+          } catch (error) {
+            console.error("Error fetching voices:", error);
+            alert(
+              "An error occurred while fetching voices. Please check the console for more details."
+            );
+          }
+        }
+      </script>
 <footer>
     <p>Hak Cipta © 2024 - <a href="https://soundoftext.site/">Sound of Text</a> Dibuat dengan ❤️</p>
     <script type="application/ld+json">
